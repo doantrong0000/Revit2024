@@ -15,18 +15,15 @@ namespace RevitAddIn1.Commands
     /// </summary>
     [UsedImplicitly]
     [Transaction(TransactionMode.Manual)]
-    public class PickObjectsCmd : ExternalCommand
+    public class GetPointByPickObject : ExternalCommand
     {
         public override void Execute()
         {
             try
             {
-                var referents = UiDocument.Selection.PickObjects(ObjectType.Element, new WallSelectionFilter(), "Chon doi tuong Wall");
-                var eles = referents.Select(x=>Document.GetElement(x)).ToList();
-                MessageBox.Show(string.Join(",", eles.Select(x=>x.Id.ToString())));
-
-                var totalLengthInMm = eles.Sum(x=> x.LookupParameter("Length").AsDouble()*304.8);
-                MessageBox.Show($"Tong chieu dai tuong = {totalLengthInMm}");
+                var rf = UiDocument.Selection.PickObject(ObjectType.PointOnElement,"Pick object");
+              
+                MessageBox.Show(rf.GlobalPoint.ToString());
             }
             catch (OperationCanceledException e)
             {
