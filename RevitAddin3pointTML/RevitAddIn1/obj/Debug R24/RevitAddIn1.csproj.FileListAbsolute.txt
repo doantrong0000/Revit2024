@@ -27,3 +27,5 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAdd.0A6F9F66.Up2Date
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.pdb
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\DimForGrid\View\DimensionGridView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\DimForGrid\View\DimensionGridView.baml

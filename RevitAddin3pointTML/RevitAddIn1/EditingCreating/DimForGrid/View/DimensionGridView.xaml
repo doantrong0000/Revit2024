@@ -1,0 +1,42 @@
+﻿<Window x:Class="RevitAddIn1.EditingCreating.DimForGrid.View.DimensionGridView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RevitAddIn1.EditingCreating.DimForGrid.View"
+        xmlns:viewModel="clr-namespace:RevitAddIn1.EditingCreating.DimForGrid.ViewModel"
+        xmlns:model="clr-namespace:RevitAddIn1.EditingCreating.DimForGrid.Model"
+        d:DataContext="{d:DesignInstance viewModel:DimentionGridViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Title="DimensionGridView" Height="170" Width="350">
+    <DockPanel Margin="10">
+        <Grid Height="70" DockPanel.Dock ="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+               
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0">Dimention Type</TextBlock>
+            <ComboBox VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1" 
+              ItemsSource="{Binding DimensionTypes}"
+              SelectedItem="{Binding SelectedDimensionType}"
+                      DisplayMemberPath="Name"></ComboBox>
+            
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">Distance</TextBlock>
+            <TextBox VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Stretch" Grid.Column="1" Height="25" Text="{Binding Distance}"></TextBox>
+
+        </Grid>
+
+        <StackPanel Height="40" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Margin="6"  Width="68" Height="22" Command="{Binding OkCommand}">OK</Button>
+            <Button Margin="6"  Width="68" Height="22" Command="{Binding CloseCommand}">Close</Button>
+        </StackPanel>
+
+
+    </DockPanel>
+</Window>
