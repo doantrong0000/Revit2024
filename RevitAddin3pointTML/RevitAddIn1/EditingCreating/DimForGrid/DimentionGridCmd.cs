@@ -25,7 +25,8 @@ namespace RevitAddIn1.EditingCreating.DimForGrid
     {
         public override void Execute()
         {
-            var vm = new DimentionGridViewModel(Document);
+            DocumentUtils.Document = Document;
+            var vm = new DimentionGridViewModel(Document, UiDocument);
             var view = new DimensionGridView() { DataContext = vm };
 
             vm.DimentionGridView = view;

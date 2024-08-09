@@ -12,5 +12,8 @@ namespace RevitAddIn1.Utils
         public static double FeetToMeet(this int feet) => feet * 0.3048;
         public static double MeetToFeet(this double met) => met * 3.280840;
         public static double MeetToFeet(this int met) => met * 3.280840;
+
+        public static double MmToFeet(this double met) => met * 3.280840/1000;
+        public static double MmToFeet(this int met) => met * 3.280840/1000.0;
     }
 }
