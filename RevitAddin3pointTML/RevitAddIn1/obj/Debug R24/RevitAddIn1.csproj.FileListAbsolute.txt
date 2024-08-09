@@ -32,3 +32,5 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\System.Text.Encodings.Web.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\System.Text.Json.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\System.ValueTuple.dll
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\CreateSheet1\View\CreateSheetView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\CreateSheet1\View\CreateSheetView.baml
