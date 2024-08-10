@@ -13,7 +13,7 @@ namespace RevitAddIn1.Parameter.ColumnBeamSlabConcreteVolumeCmd
 {
     [UsedImplicitly]
     [Transaction(TransactionMode.Manual)]
-    public class RenameSheetCmd : ExternalCommand
+    public class ColumnBeamSlabConcreteVolumeCmd : ExternalCommand
     {
         public override void Execute()
         {

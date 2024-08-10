@@ -7,6 +7,9 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Nice3point.Revit.Toolkit.External;
+using OfficeOpenXml;
+using RevitAddIn1.EditingCreating.CreateSheet1.View;
+using RevitAddIn1.EditingCreating.CreateSheet1.ViewModel;
 
 namespace RevitAddIn1.EditingCreating.CreateSheet1
 {
@@ -16,7 +19,14 @@ namespace RevitAddIn1.EditingCreating.CreateSheet1
     {
         public override void Execute()
         {
-            throw new NotImplementedException();
+            // if you have a commercial license
+            ExcelPackage.LicenseContext = LicenseContext.Commercial;
+            var vm = new CreateSheetViewModel(Document);
+            var view = new CreateSheetView() { DataContext = vm };
+
+            vm.CreateSheetView = view;
+            view.ShowDialog();
+
         }
     }
 }

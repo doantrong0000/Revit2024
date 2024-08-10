@@ -42,6 +42,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="EPPlus" Version="7.2.2" />
         <PackageReference Include="Nice3point.Revit.Build.Tasks" Version="2.*" />
         <PackageReference Include="Nice3point.Revit.Toolkit" Version="$(RevitVersion).*" />
         <PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*" />
@@ -58,6 +59,12 @@
 
     <ItemGroup>
         <Folder Include="Models" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="EditingCreating\DimForGrid\View\DimensionGridView.xaml">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Page>
     </ItemGroup>
 
 </Project>

@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace RevitAddIn1.EditingCreating.CreateSheet1.View
 {
-    /// <summary>
-    /// Interaction logic for CreateSheetView.xaml
-    /// </summary>
+ 
     public partial class CreateSheetView : Window
     {
         public CreateSheetView()
@@ -24,4 +22,6 @@ namespace RevitAddIn1.EditingCreating.CreateSheet1.View
             InitializeComponent();
         }
     }
+
+    
 }

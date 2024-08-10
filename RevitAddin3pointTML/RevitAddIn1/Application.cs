@@ -1,5 +1,6 @@
 ﻿using Nice3point.Revit.Toolkit.External;
 using RevitAddIn1.Commands;
+using OfficeOpenXml;
 
 namespace RevitAddIn1
 {
@@ -12,6 +13,9 @@ namespace RevitAddIn1
         public override void OnStartup()
         {
             CreateRibbon();
+
+            // if you have a commercial license
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
 
         private void CreateRibbon()

@@ -13,7 +13,7 @@ namespace RevitAddIn1.Commands.Filter
 {
     [UsedImplicitly]
     [Transaction(TransactionMode.Manual)]
-    public class ColumnBeamSlabConcreteVolumeCmd : ExternalCommand
+    public class FilterWallsAndColumnsByMultiCategoryFilterCmd : ExternalCommand
     {
         public override void Execute()
         {

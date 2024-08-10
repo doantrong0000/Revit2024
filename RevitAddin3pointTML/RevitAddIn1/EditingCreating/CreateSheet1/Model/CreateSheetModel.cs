@@ -10,8 +10,8 @@ namespace RevitAddIn1.EditingCreating.CreateSheet1.Model
     {
         public string SheetNumber { get; set; }
         public string SheetName { get; set; }
-        public string DrawBy { get; set; }
-        public string CheckBy { get; set; }
+        public string DrawnBy { get; set; }
+        public string CheckedBy { get; set; }
 
         public CreateSheetModel()
         {

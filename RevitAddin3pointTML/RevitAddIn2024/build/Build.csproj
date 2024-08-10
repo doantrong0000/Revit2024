@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -12,13 +12,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Nuke.Common" Version="8.0.0"/>
+        <PackageReference Include="EPPlus" Version="7.2.2" />
+        <PackageReference Include="Nuke.Common" Version="8.0.0" />
 </ItemGroup>
 
     <ItemGroup>
-        <Using Include="Nuke.Common"/>
-        <Using Include="Nuke.Common.IO"/>
-        <Using Include="Serilog"/>
+        <Using Include="Nuke.Common" />
+        <Using Include="Nuke.Common.IO" />
+        <Using Include="Serilog" />
     </ItemGroup>
 
 </Project>
