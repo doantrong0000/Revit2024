@@ -10,6 +10,7 @@
 
     <ItemGroup>
         <PackageReference Include="EPPlus" Version="7.2.2" />
+        <PackageReference Include="morelinq" Version="4.3.0" />
         <PackageReference Include="WixSharp.bin" Version="1.*" />
         <PackageReference Include="WixSharp.wix.bin" Version="3.*" />
     </ItemGroup>
