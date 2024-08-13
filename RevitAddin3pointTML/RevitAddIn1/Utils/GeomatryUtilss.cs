@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RevitAddIn1.Utils
 {
-    public static class SolidUtil
+    public static class GeometryUtils
     {
         public static List<Solid> GetAllSolids(this Element ele)
         {
@@ -61,6 +61,16 @@ namespace RevitAddIn1.Utils
             }
 
             return solids;
+        }
+
+        public static bool IsPerpendicular(this XYZ v1, XYZ v2)
+        {
+            return Math.Abs(v1.DotProduct(v2)) < 0.0001;
+        }
+
+        public static bool IsParallel(this XYZ v1, XYZ v2)
+        {
+            return Math.Abs(v1.CrossProduct(v2).GetLength()) < 0.0001;
         }
     }
 }
