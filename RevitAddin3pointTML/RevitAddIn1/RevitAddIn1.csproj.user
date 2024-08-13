@@ -8,6 +8,9 @@
     <Compile Update="EditingCreating\DimForGrid\View\DimensionGridView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Geometry\CreatePileFormCad\View\CreatePileFromCadView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Parameter\RenameSheet\View\RenameSheetView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditingCreating\DimForGrid\View\DimensionGridView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Geometry\CreatePileFormCad\View\CreatePileFromCadView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Parameter\RenameSheet\View\RenameSheetView.xaml">

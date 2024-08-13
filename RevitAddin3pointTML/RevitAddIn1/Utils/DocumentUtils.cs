@@ -10,5 +10,7 @@ namespace RevitAddIn1
     {
         public static Document Document;
         public static Element ToElement(this Reference rf) => Document.GetElement(rf);
+
+        public static Element ToElement(this ElementId id) => Document.GetElement(id);
     }   
 }

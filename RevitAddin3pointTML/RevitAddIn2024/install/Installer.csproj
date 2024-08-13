@@ -13,6 +13,7 @@
         <PackageReference Include="morelinq" Version="4.3.0" />
         <PackageReference Include="WixSharp.bin" Version="1.*" />
         <PackageReference Include="WixSharp.wix.bin" Version="3.*" />
+        <PackageReference Include="WPFUtils" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

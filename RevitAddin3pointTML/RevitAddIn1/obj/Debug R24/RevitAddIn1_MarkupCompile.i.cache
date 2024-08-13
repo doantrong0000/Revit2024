@@ -10,11 +10,11 @@ none
 false
 ;DEBUG;TRACE;DEBUG_R24;NETFRAMEWORK;NET48;
 
-4-1041754470
+51397696986
 
-63-9495643
-441481411757
-EditingCreating\CreateSheet1\View\CreateSheetView.xaml;EditingCreating\DimForGrid\View\DimensionGridView.xaml;Parameter\RenameSheet\View\RenameSheetView.xaml;Views\RevitAddIn1View.xaml;
+68-565912399
+452001437105
+EditingCreating\CreateSheet1\View\CreateSheetView.xaml;EditingCreating\DimForGrid\View\DimensionGridView.xaml;Geometry\CreatePileFormCad\View\CreatePileFromCadView.xaml;Parameter\RenameSheet\View\RenameSheetView.xaml;Views\RevitAddIn1View.xaml;
 
-False
+True
 

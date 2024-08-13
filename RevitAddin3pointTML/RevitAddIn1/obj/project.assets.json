@@ -352,6 +352,15 @@
             "related": ".xml"
           }
         }
+      },
+      "WPFUtils/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net461/WPFUtils.dll": {}
+        },
+        "runtime": {
+          "lib/net461/WPFUtils.dll": {}
+        }
       }
     }
   },
@@ -1033,6 +1042,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WPFUtils/1.0.0": {
+      "sha512": "nGT00qNQa6iBLD32OZVO/7lGfYok2+YDtVdLEwBPLAfHC5CUUkFTR9z/FPBq9CVQZkbsAEtj9DbpD3u1yBOYXg==",
+      "type": "package",
+      "path": "wpfutils/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/WPFUtils.dll",
+        "wpfutils.1.0.0.nupkg.sha512",
+        "wpfutils.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1045,6 +1066,7 @@
       "Nice3point.Revit.Extensions >= 2024.*",
       "Nice3point.Revit.Toolkit >= 2024.*",
       "System.Text.Json >= 8.0.4",
+      "WPFUtils >= 1.0.0",
       "morelinq >= 4.3.0"
     ]
   },
@@ -1129,6 +1151,10 @@
           "System.Text.Json": {
             "target": "Package",
             "version": "[8.0.4, )"
+          },
+          "WPFUtils": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "morelinq": {
             "target": "Package",
