@@ -17,6 +17,7 @@ using System.Text.Json;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using RevitAddIn1.SelectionFilter;
 
 
 namespace RevitAddIn1.EditingCreating.DimForGrid.ViewModel

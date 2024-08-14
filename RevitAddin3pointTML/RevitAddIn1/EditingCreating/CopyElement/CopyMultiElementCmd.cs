@@ -4,6 +4,8 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI.Selection;
 using CommunityToolkit.Mvvm.Messaging;
 using Nice3point.Revit.Toolkit.External;
+using RevitAddIn1.SelectionFilter;
+using RevitAddIn1.Utils;
 using RevitAddIn1.ViewModels;
 using RevitAddIn1.Views;
 using OperationCanceledException = Autodesk.Revit.Exceptions.OperationCanceledException;

@@ -1,4 +1,6 @@
-﻿namespace RevitAddIn1.Geometry.CreatePileFormCad.Model
+﻿using RevitAddIn1.Utils;
+
+namespace RevitAddIn1.Geometry.CreatePileFormCad.Model
 {
     public class CadCurveModel : ObservableObject
     {

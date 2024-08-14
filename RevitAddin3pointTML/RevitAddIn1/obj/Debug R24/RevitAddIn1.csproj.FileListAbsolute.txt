@@ -1,3 +1,12 @@
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.csproj.AssemblyReference.cache
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\CreateSheet1\View\CreateSheetView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\DimForGrid\View\DimensionGridView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ExternalEvent\View\CreateSheetView2.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Geometry\CreatePileFormCad\View\CreatePileFromCadView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Parameter\RenameSheet\View\RenameSheetView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Views\RevitAddIn1View.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1_MarkupCompile.cache
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1_MarkupCompile.lref
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\RevitAddIn1.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\RevitAddIn1.pdb
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\CommunityToolkit.Mvvm.dll
@@ -20,16 +29,9 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\System.Threading.Tasks.Extensions.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\System.ValueTuple.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\WPFUtils.dll
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.csproj.AssemblyReference.cache
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\CreateSheet1\View\CreateSheetView.g.cs
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\DimForGrid\View\DimensionGridView.g.cs
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Geometry\CreatePileFormCad\View\CreatePileFromCadView.g.cs
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Parameter\RenameSheet\View\RenameSheetView.g.cs
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Views\RevitAddIn1View.g.cs
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1_MarkupCompile.cache
-C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1_MarkupCompile.lref
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\CreateSheet1\View\CreateSheetView.baml
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\EditingCreating\DimForGrid\View\DimensionGridView.baml
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ExternalEvent\View\CreateSheetView2.baml
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Geometry\CreatePileFormCad\View\CreatePileFromCadView.baml
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Parameter\RenameSheet\View\RenameSheetView.baml
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\Views\RevitAddIn1View.baml
@@ -42,3 +44,4 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAdd.0A6F9F66.Up2Date
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.dll
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.pdb
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\Resources\Icons\rename.png

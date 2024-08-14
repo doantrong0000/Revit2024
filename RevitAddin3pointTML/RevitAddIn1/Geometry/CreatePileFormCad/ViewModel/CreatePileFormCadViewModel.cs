@@ -1,31 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Windows.Media.Animation;
-using RevitAddIn1.EditingCreating.DimForGrid.View;
-using RevitAddIn1.EditingCreating.DimForGrid.Model;
-using RevitAddIn1.EditingCreating.DimForGrid;
+﻿using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.DB;
-using RevitAddIn1.Utils;
 using Autodesk.Revit.UI.Selection;
-using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using RevitAddIn1.Geometry.CreatePileFormCad.View;
-using System.Windows.Shapes;
-using Autodesk.Revit.Attributes;
-using Autodesk.Revit.DB.Structure;
 using MoreLinq;
 using RevitAddIn1.Geometry.CreatePileFormCad.Model;
+using RevitAddIn1.Geometry.CreatePileFormCad.View;
+using RevitAddIn1.SelectionFilter;
+using RevitAddIn1.Utils;
 
-
-namespace RevitAddIn1.Geometry.CreatePileFormCad
+namespace RevitAddIn1.Geometry.CreatePileFormCad.ViewModel
 {
     public class CreatePileFromCadViewModel : ObservableObject
     {

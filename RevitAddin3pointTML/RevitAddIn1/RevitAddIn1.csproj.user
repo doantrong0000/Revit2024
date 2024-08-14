@@ -22,6 +22,9 @@
     <Page Update="EditingCreating\DimForGrid\View\DimensionGridView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="ExternalEvent\View\CreateSheetView2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Geometry\CreatePileFormCad\View\CreatePileFromCadView.xaml">
       <SubType>Designer</SubType>
     </Page>

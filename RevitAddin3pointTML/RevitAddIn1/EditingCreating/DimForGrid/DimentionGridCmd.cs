@@ -15,6 +15,7 @@ using RevitAddIn1.EditingCreating.DimForGrid.View;
 using RevitAddIn1.EditingCreating.DimForGrid.Model;
 using RevitAddIn1.EditingCreating.DimForGrid.ViewModel;
 using RevitAddIn1.EditingCreating;
+using RevitAddIn1.Utils;
 
 
 namespace RevitAddIn1.EditingCreating.DimForGrid

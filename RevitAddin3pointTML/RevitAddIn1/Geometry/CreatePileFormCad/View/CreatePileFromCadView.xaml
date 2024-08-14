@@ -6,8 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RevitAddIn1.Geometry.CreatePileFormCad.View"
         xmlns:createPileFormCad="clr-namespace:RevitAddIn1.Geometry.CreatePileFormCad"
+        xmlns:viewModel="clr-namespace:RevitAddIn1.Geometry.CreatePileFormCad.ViewModel"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance createPileFormCad:CreatePileFromCadViewModel}"
+        d:DataContext="{d:DesignInstance viewModel:CreatePileFromCadViewModel}"
         Title="Create Pile Form Cad " Height="200" Width="400">
     <DockPanel Margin="10">
         <Grid Height="100" DockPanel.Dock ="Top">

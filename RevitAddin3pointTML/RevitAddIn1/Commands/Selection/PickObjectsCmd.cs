@@ -1,14 +1,10 @@
-﻿using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI.Selection;
-using CommunityToolkit.Mvvm.Messaging;
 using Nice3point.Revit.Toolkit.External;
-using RevitAddIn1.ViewModels;
-using RevitAddIn1.Views;
 using OperationCanceledException = Autodesk.Revit.Exceptions.OperationCanceledException;
 
-namespace RevitAddIn1.Commands
+namespace RevitAddIn1.Commands.Selection
 {
     /// <summary>
     ///     External command entry point invoked from the Revit interface

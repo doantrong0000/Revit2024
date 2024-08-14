@@ -3,7 +3,7 @@ using Nice3point.Revit.Toolkit.External;
 using RevitAddIn1.ViewModels;
 using RevitAddIn1.Views;
 
-namespace RevitAddIn1.Commands
+namespace RevitAddIn1.Commands.Selection
 {
     /// <summary>
     ///     External command entry point invoked from the Revit interface

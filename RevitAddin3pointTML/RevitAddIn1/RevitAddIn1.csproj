@@ -64,6 +64,18 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Update="ExternalEvent\View\CreateSheetView2.xaml.cs">
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Resources\Icons\rename.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
       <Page Update="EditingCreating\DimForGrid\View\DimensionGridView.xaml">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </Page>
