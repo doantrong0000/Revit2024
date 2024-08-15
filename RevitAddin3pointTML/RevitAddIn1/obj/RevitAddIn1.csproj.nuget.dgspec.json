@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[7.2.2, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Nice3point.Revit.Api.RevitAPI": {
               "target": "Package",
               "version": "[2024.*, )"

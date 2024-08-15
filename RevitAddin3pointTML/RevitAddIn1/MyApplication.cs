@@ -26,10 +26,28 @@ namespace RevitAddIn1
             application.CreateRibbonPanel(Tab.AddIns, "Test");
 
             var path = Assembly.GetExecutingAssembly().Location;
+
             var pushButtonDataRenameSheet = new PushButtonData("RenameSheet", "Rename Sheet", path, "RevitAddIn1.Parameter.RenameSheet.RenameSheetCmd");
+
             pushButtonDataRenameSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
-            pushButtonDataRenameSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rename.png"));
-            panelMe.AddItem(pushButtonDataRenameSheet);
+
+            pushButtonDataRenameSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon32.png"));
+
+            var pushButtonDataCreateSheet = new PushButtonData("CreateSheet", "Create Sheet", path, "RevitAddIn1.EditingCreating.CreateSheet1.CreateSheetCmd");
+
+            pushButtonDataCreateSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
+
+            pushButtonDataCreateSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rename.png"));
+
+            pushButtonDataCreateSheet.ToolTip = "Create sheets by import data from Excel";
+
+            var sbd = new PulldownButtonData("View-Sheet", "View-Sheet");
+            var sb = panelMe.AddItem(sbd) as PulldownButton;
+
+            sb.AddPushButton(pushButtonDataCreateSheet);
+            sb.AddPushButton(pushButtonDataRenameSheet);
+
+            //panelMe.AddItem(pushButtonDataRenameSheet);
             return Result.Succeeded;
         }
         public Result OnShutdown(UIControlledApplication application)
