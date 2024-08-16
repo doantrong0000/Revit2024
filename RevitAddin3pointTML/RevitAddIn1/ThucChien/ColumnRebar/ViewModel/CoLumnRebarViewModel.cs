@@ -160,8 +160,8 @@ namespace RevitAddIn1.ThucChien.ColumnRebar.ViewModel
             {
                 tx.Start();
                 CreateStirrup();
-                CreateMainRebar();
-
+                CreateXMainRebar();
+                CreateYMainRebar();
 
 
                 tx.Commit();
@@ -186,9 +186,95 @@ namespace RevitAddIn1.ThucChien.ColumnRebar.ViewModel
 
             shapeDrivenAccessor.SetLayoutAsMaximumSpacing(StrirrupSpacing.MmToFeet(), (columnModel.TopElevation-columnModel.BotElevation) -2*Cover- StrirrupDiameter.BarModelDiameter, true, true,true);
         }
-        void CreateMainRebar()
+        void CreateXMainRebar()
         {
+        var spacing2Rebars = (columnModel.Width-2*Cover - 2* StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter)/(
+            NumberOfXRebar - 1);
 
+
+        //Top layer 
+        var topRebars = new List<Rebar>();
+
+            for (int i = 0; i < NumberOfXRebar; i++)
+            {
+                var o2 = columnModel.A.Add(
+                        columnModel.XVector * (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2))
+                    .Add(-columnModel.YVector *
+                         (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2));
+
+                o2 = new XYZ(o2.X, o2.Y, columnModel.BotElevation);
+                o2 = o2.Add(columnModel.XVector * i * spacing2Rebars);
+
+                var columnHeight = columnModel.TopElevation - columnModel.BotElevation;
+                var line20 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 20 * XDiameter.BarNominalDiameter)));
+                var line30 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 30 * XDiameter.BarNominalDiameter)));
+                if (i % 2 == 0)
+                {
+                    var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, columnModel.Column,
+                        columnModel.XVector,
+                        new List<Curve>() { line20 }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                    topRebars.Add(rebar);
+                }
+                else
+                {
+                    var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, columnModel.Column,
+                        columnModel.XVector,
+                        new List<Curve>() { line30 }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                    topRebars.Add(rebar);
+                }
+
+            }
+
+            ElementTransformUtils.CopyElements(doc, topRebars.Select(x=>x.Id).ToList(),columnModel.YVector * -1 *(columnModel.Height -2*Cover- 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter));
+          
+        }
+
+        void CreateYMainRebar()
+        {
+            var spacing2Rebars = (columnModel.Height - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter) / (
+         NumberOfYRebar - 1);
+
+
+            //Left layer 
+            var topRebars = new List<Rebar>();
+
+            
+            if (NumberOfYRebar > 2)
+            {
+                for (int i = 0; i < NumberOfYRebar; i++)
+                {
+                    if (i == 0 || i == NumberOfYRebar - 1)
+                    {
+                        continue;
+                    }
+                    var o2 = columnModel.A.Add(
+                            columnModel.XVector * (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2))
+                        .Add(-columnModel.YVector *
+                             (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2));
+
+                    o2 = new XYZ(o2.X, o2.Y, columnModel.BotElevation);
+                    o2 = o2.Add(columnModel.YVector*-1 * i * spacing2Rebars);
+
+                    var columnHeight = columnModel.TopElevation - columnModel.BotElevation;
+                    var line20 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 20 * XDiameter.BarNominalDiameter)));
+                    var line30 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 30 * XDiameter.BarNominalDiameter)));
+                    if (i % 2 == 0)
+                    {
+                        var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, columnModel.Column,
+                            columnModel.XVector,
+                            new List<Curve>() { line20 }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                        topRebars.Add(rebar);
+                    }
+                    else
+                    {
+                        var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, columnModel.Column,
+                            columnModel.XVector,
+                            new List<Curve>() { line30 }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                        topRebars.Add(rebar);
+                    }
+                }
+            }
+            ElementTransformUtils.CopyElements(doc, topRebars.Select(x => x.Id).ToList(), columnModel.XVector  * (columnModel.Width - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter));
         }
         void LoadCad()
         {
