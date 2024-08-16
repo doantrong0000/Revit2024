@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RevitAddIn1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug R24")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9206df78a601d3559ce1a84aa9a6bf9a7d57bf44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f32cb895229dd961c89ee86db48c9298301bb5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RevitAddIn1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RevitAddIn1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
