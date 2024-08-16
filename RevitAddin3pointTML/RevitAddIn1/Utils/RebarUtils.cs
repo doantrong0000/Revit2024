@@ -9,9 +9,6 @@ namespace RevitAddIn1.Utils
 {
     public static class RebarUtils
     {
-        public static double BarDiameter(this RebarBarType rebar)
-        {
-            return rebar.BarDiameter();
-        }
+       
     }
 }

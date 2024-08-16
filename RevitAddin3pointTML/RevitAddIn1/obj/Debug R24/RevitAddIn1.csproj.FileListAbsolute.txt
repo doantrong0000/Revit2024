@@ -46,3 +46,5 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\RevitAddIn1.pdb
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\Resources\Icons\rename.png
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\Newtonsoft.Json.dll
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ThucChien\ColumnRebar\View\ColumnRebarView.g.cs
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ThucChien\ColumnRebar\View\ColumnRebarView.baml

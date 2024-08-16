@@ -14,6 +14,9 @@
     <Compile Update="Parameter\RenameSheet\View\RenameSheetView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ThucChien\ColumnRebar\View\ColumnRebarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="EditingCreating\CreateSheet1\View\CreateSheetView.xaml">
@@ -29,6 +32,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Parameter\RenameSheet\View\RenameSheetView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ThucChien\ColumnRebar\View\ColumnRebarView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\RevitAddIn1View.xaml">
