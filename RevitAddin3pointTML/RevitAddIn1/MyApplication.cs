@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Autodesk.Revit.DB.Structure;
 
 namespace RevitAddIn1
 {
@@ -46,6 +48,12 @@ namespace RevitAddIn1
 
             sb.AddPushButton(pushButtonDataCreateSheet);
             sb.AddPushButton(pushButtonDataRenameSheet);
+
+
+
+            var pushButtonRebarColumn = new PushButtonData("RebarColumn", "RebarColumn", path, "RevitAddIn1.ThucChien.ColumnRebar.ColumnRebarCmd");
+            pushButtonRebarColumn.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rebar.png"));
+            var sb1 = panelMe.AddItem(pushButtonRebarColumn);
 
             //panelMe.AddItem(pushButtonDataRenameSheet);
             return Result.Succeeded;
