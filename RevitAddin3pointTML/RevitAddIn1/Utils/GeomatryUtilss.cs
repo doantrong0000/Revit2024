@@ -72,5 +72,17 @@ namespace RevitAddIn1.Utils
         {
             return Math.Abs(v1.CrossProduct(v2).GetLength()) < 0.0001;
         }
+
+        public static bool IsParallelToXAxis(this XYZ vector)
+        {
+            // X-axis unit vector in Revit
+            XYZ xAxis = XYZ.BasisX;
+
+            // Compute the cross product of the vector with the X-axis
+            XYZ crossProduct = vector.CrossProduct(xAxis);
+
+            // Check if the length of the cross product vector is close to zero
+            return Math.Abs(crossProduct.GetLength()) < 0.0001;
+        }
     }
 }

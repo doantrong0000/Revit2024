@@ -1,67 +1,67 @@
-﻿using Autodesk.Revit.Attributes;
-using Autodesk.Revit.UI;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using Autodesk.Revit.DB.Structure;
+﻿//using Autodesk.Revit.Attributes;
+//using Autodesk.Revit.UI;
+//using System;
+//using System.Collections.Generic;
+//using System.Drawing;
+//using System.Linq;
+//using System.Reflection;
+//using System.Resources;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Windows;
+//using System.Windows.Media.Imaging;
+//using Autodesk.Revit.DB.Structure;
 
-namespace RevitAddIn1
-{
-    [UsedImplicitly]
-    [Transaction(TransactionMode.Manual)]
-    public class Application : IExternalApplication
-    {
-      
-        public Result OnStartup(UIControlledApplication application)
-        {
-            application.CreateRibbonTab("Revit Api 2025");
+//namespace RevitAddIn1
+//{
+//    [UsedImplicitly]
+//    [Transaction(TransactionMode.Manual)]
+//    public class Application : IExternalApplication
+//    {
 
-            var panelMe= application.CreateRibbonPanel("Revit Api 2025", "Me");
+//        public Result OnStartup(UIControlledApplication application)
+//        {
+//            application.CreateRibbonTab("Revit Api 2025");
 
-            application.CreateRibbonPanel(Tab.AddIns, "Test");
+//            var panelMe = application.CreateRibbonPanel("Revit Api 2025", "Me");
 
-            var path = Assembly.GetExecutingAssembly().Location;
+//            application.CreateRibbonPanel(Tab.AddIns, "Test");
 
-            var pushButtonDataRenameSheet = new PushButtonData("RenameSheet", "Rename Sheet", path, "RevitAddIn1.Parameter.RenameSheet.RenameSheetCmd");
+//            var path = Assembly.GetExecutingAssembly().Location;
 
-            pushButtonDataRenameSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
+//            var pushButtonDataRenameSheet = new PushButtonData("RenameSheet", "Rename Sheet", path, "RevitAddIn1.Parameter.RenameSheet.RenameSheetCmd");
 
-            pushButtonDataRenameSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon32.png"));
+//            pushButtonDataRenameSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
 
-            var pushButtonDataCreateSheet = new PushButtonData("CreateSheet", "Create Sheet", path, "RevitAddIn1.EditingCreating.CreateSheet1.CreateSheetCmd");
+//            pushButtonDataRenameSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon32.png"));
 
-            pushButtonDataCreateSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
+//            var pushButtonDataCreateSheet = new PushButtonData("CreateSheet", "Create Sheet", path, "RevitAddIn1.EditingCreating.CreateSheet1.CreateSheetCmd");
 
-            pushButtonDataCreateSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rename.png"));
+//            pushButtonDataCreateSheet.Image = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\RibbonIcon16.png"));
 
-            pushButtonDataCreateSheet.ToolTip = "Create sheets by import data from Excel";
+//            pushButtonDataCreateSheet.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rename.png"));
 
-            var sbd = new PulldownButtonData("View-Sheet", "View-Sheet");
-            var sb = panelMe.AddItem(sbd) as PulldownButton;
+//            pushButtonDataCreateSheet.ToolTip = "Create sheets by import data from Excel";
 
-            sb.AddPushButton(pushButtonDataCreateSheet);
-            sb.AddPushButton(pushButtonDataRenameSheet);
+//            var sbd = new PulldownButtonData("View-Sheet", "View-Sheet");
+//            var sb = panelMe.AddItem(sbd) as PulldownButton;
+
+//            sb.AddPushButton(pushButtonDataCreateSheet);
+//            sb.AddPushButton(pushButtonDataRenameSheet);
 
 
 
-            var pushButtonRebarColumn = new PushButtonData("RebarColumn", "RebarColumn", path, "RevitAddIn1.ThucChien.ColumnRebar.ColumnRebarCmd");
-            pushButtonRebarColumn.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rebar.png"));
-            var sb1 = panelMe.AddItem(pushButtonRebarColumn);
+//            var pushButtonRebarColumn = new PushButtonData("RebarColumn", "RebarColumn", path, "RevitAddIn1.ThucChien.ColumnRebar.ColumnRebarCmd");
+//            pushButtonRebarColumn.LargeImage = new BitmapImage(new Uri(@"C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\Resources\\Icons\\rebar.png"));
+//            var sb1 = panelMe.AddItem(pushButtonRebarColumn);
 
-            //panelMe.AddItem(pushButtonDataRenameSheet);
-            return Result.Succeeded;
-        }
-        public Result OnShutdown(UIControlledApplication application)
-        {
-         
-            return Result.Cancelled;
-        }
-    }
-}
+//            panelMe.AddItem(pushButtonDataRenameSheet);
+//            return Result.Succeeded;
+//        }
+//        public Result OnShutdown(UIControlledApplication application)
+//        {
+
+//            return Result.Cancelled;
+//        }
+//    }
+//}
