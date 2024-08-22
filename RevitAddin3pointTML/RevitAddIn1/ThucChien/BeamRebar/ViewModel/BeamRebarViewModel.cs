@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using RevitAddIn1.ThucChien.BeamRebar.View;
 using RevitAddIn1.ThucChien.BeamRebar.Model;
+using System.Data.Common;
 
 namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
 {
@@ -144,9 +145,9 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
             BeamRebarView.Close();
             try
             {
-                var column = uiDoc.Selection.PickObject(ObjectType.Element, new ColumnSelectionFilter(), "'Select column").ToElement() as FamilyInstance;
+                var beam = uiDoc.Selection.PickObject(ObjectType.Element, new ColumnSelectionFilter(), "'Select column").ToElement() as FamilyInstance;
+                beamModel = new BeamRebarModel(beam);
 
-          
             }
             catch (Exception e)
             {
@@ -172,6 +173,7 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
 
         void CreateStirrup()
         {
+           
         }
         void CreateXMainRebar()
         {

@@ -16,4 +16,8 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)nice3point.revit.build.tasks\2.0.2\build\Nice3point.Revit.Build.Tasks.props" Condition="Exists('$(NuGetPackageRoot)nice3point.revit.build.tasks\2.0.2\build\Nice3point.Revit.Build.Tasks.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Windows\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
+    <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\Windows\.nuget\packages\materialdesignthemes\5.1.0</PkgMaterialDesignThemes>
+  </PropertyGroup>
 </Project>
