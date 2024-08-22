@@ -7,7 +7,21 @@ namespace RevitAddIn1.SelectionFilter
         public bool AllowElement(Element elem)
         {
             // cột thép
-            return elem.Category?.Id.Value == -2001330; 
+            return elem.Category?.Id.Value == -2001330;
+        }
+
+        public bool AllowReference(Reference reference, XYZ position)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class BeamSelectionFilter : ISelectionFilter
+    {
+        public bool AllowElement(Element elem)
+        {
+            // cột thép
+            return elem.Category.BuiltInCategory == BuiltInCategory.OST_StructuralFraming;
         }
 
         public bool AllowReference(Reference reference, XYZ position)

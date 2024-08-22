@@ -1,0 +1,86 @@
+﻿<Window x:Class="RevitAddIn1.ThucChien.BeamRebar.View.BeamRebarView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RevitAddIn1.ThucChien.BeamRebar.View"
+        xmlns:viewModel="clr-namespace:RevitAddIn1.ThucChien.BeamRebar.ViewModel"
+        d:DataContext="{d:DesignInstance viewModel:BeamRebarViewModel}"
+        mc:Ignorable="d"
+        Title="BeamRebarView" Height="300" Width="400">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel Margin="10" >
+        <GroupBox Header="Main Rebar" DockPanel.Dock="Top">
+            <Grid  DockPanel.Dock ="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" >Number of X rebar</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding NumberOfXRebar}"></TextBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" >X Diameter</TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding XDiameter}" DisplayMemberPath="Name"></ComboBox>
+
+                <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Number of Y rebar</TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1"
+                         Text="{Binding NumberOfYRebar}"></TextBox>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  >Y Diameter</TextBlock>
+                <ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding YDiameter}" DisplayMemberPath="Name"></ComboBox>
+
+
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Stirrup" DockPanel.Dock="Top">
+            <Grid  DockPanel.Dock ="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" >Spacing</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding StrirrupSpacing}"></TextBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Stirrup Diameter</TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding StrirrupDiameter}" DisplayMemberPath="Name"></ComboBox>
+
+
+
+
+
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Height="40" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+
+            <Button Margin="6"  Width="68" Height="22" Command="{Binding OkCommand}">OK</Button>
+            <Button Margin="6"  Width="68" Height="22" Command="{Binding CloseCommand}">Close</Button>
+        </StackPanel>
+
+    </DockPanel>
+</Window>
