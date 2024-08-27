@@ -50,3 +50,6 @@ C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ThucChien\ColumnRebar\View\ColumnRebarView.baml
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ThucChien\BeamRebar\View\BeamRebarView.g.cs
 C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\obj\Debug R24\ThucChien\BeamRebar\View\BeamRebarView.baml
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\MaterialDesignColors.dll
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\MaterialDesignThemes.Wpf.dll
+C:\Users\Windows\Documents\GitHub\Revit2024\RevitAddin3pointTML\RevitAddIn1\bin\Debug R24\Microsoft.Xaml.Behaviors.dll

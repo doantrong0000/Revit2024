@@ -4,7 +4,7 @@
   "success": true,
   "projectFilePath": "C:\\Users\\Windows\\Documents\\GitHub\\Revit2024\\RevitAddin3pointTML\\RevitAddIn1\\RevitAddIn1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Windows\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\Windows\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.0\\communitytoolkit.mvvm.8.3.0.nupkg.sha512",
     "C:\\Users\\Windows\\.nuget\\packages\\epplus\\7.2.2\\epplus.7.2.2.nupkg.sha512",
     "C:\\Users\\Windows\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\Windows\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",

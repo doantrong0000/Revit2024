@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:RevitAddIn1.ThucChien.BeamRebar.ViewModel"
         d:DataContext="{d:DesignInstance viewModel:BeamRebarViewModel}"
         mc:Ignorable="d"
-        Title="BeamRebarView" Height="300" Width="400">
+        Title="BeamRebarView" Height="350" Width="400">
     <Window.Resources>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="2"></Setter>

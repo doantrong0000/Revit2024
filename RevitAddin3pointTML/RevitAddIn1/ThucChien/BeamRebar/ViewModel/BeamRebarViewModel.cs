@@ -145,9 +145,10 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
             BeamRebarView.Close();
             try
             {
-                var beam = uiDoc.Selection.PickObject(ObjectType.Element, new ColumnSelectionFilter(), "'Select column").ToElement() as FamilyInstance;
-                beamModel = new BeamRebarModel(beam);
+                var beam = uiDoc.Selection.PickObject(ObjectType.Element, new BeamSelectionFilter(), "'Select beam").ToElement() as FamilyInstance;
 
+                beamModel = new BeamRebarModel(beam);
+        
             }
             catch (Exception e)
             {
@@ -173,16 +174,116 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
 
         void CreateStirrup()
         {
-           
+            var shaper = new FilteredElementCollector(doc).OfClass(typeof(RebarShape)).Cast<RebarShape>()
+                .First(x => x.Name == "M_T6");
+            var o1 = beamModel.D.Add(beamModel.XVector * Cover ).Add(beamModel.ZVector * Cover);
+             o1 = new XYZ(o1.X -beamModel.Width/2, beamModel.StartPoint.Y - Cover - StrirrupDiameter.BarModelDiameter / 2 , o1.Z );
+
+            var rebar = Rebar.CreateFromRebarShape(doc, shaper, StrirrupDiameter, beamModel.Beam, o1, beamModel.XVector,
+                beamModel.YVector);
+            var shapeDrivenAccessor = rebar.GetShapeDrivenAccessor();
+            shapeDrivenAccessor.ScaleToBox(o1, beamModel.XVector * (beamModel.Width - 2 * Cover),beamModel.ZVector * (beamModel.Height - 2 * Cover));
+
+            double totalLength = beamModel.beamCurve.Length;
+
+            // Áp dụng phép biến đổi lên beamCurve
+    
+
+            shapeDrivenAccessor.SetLayoutAsMaximumSpacing(StrirrupSpacing.MmToFeet(), totalLength - 2 * Cover - StrirrupDiameter.BarModelDiameter, true, false, false);
+
+
         }
         void CreateXMainRebar()
         {
-           
+            var spacing2Rebars = (beamModel.Width - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter) / (
+            NumberOfXRebar - 1);
+
+
+            //Top layer 
+            var topRebars = new List<Rebar>();
+
+            for (int i = 0; i < NumberOfXRebar; i++)
+            {
+                var o2 = beamModel.A.Add(
+                        beamModel.XVector * (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2))
+                    .Add(-beamModel.ZVector *
+                         (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2));
+
+                o2 = new XYZ(o2.X - beamModel.Width / 2, beamModel.EndPoint.Y, o2.Z);
+                o2 = o2.Add(beamModel.XVector * i * spacing2Rebars);
+
+                var beamLength = beamModel.beamCurve.Length;
+                var line = Line.CreateBound(o2, o2.Add(XYZ.BasisY * (beamLength)));
+            
+                if (i % 2 == 0)
+                {
+                    var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, beamModel.Beam,
+                        beamModel.XVector,
+                        new List<Curve>() { line} , RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                    topRebars.Add(rebar);
+                }
+                else
+                {
+                    var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, XDiameter, null, null, beamModel.Beam,
+                        beamModel.XVector,
+                        new List<Curve>() { line} , RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                    topRebars.Add(rebar);
+                }
+
+            }
+
+            ElementTransformUtils.CopyElements(doc, topRebars.Select(x => x.Id).ToList(), beamModel.ZVector * -1 * (beamModel.Height - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter));
+
         }
 
         void CreateYMainRebar()
         {
-         
+            var spacing2Rebars = (beamModel.Height - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter) / (
+         NumberOfYRebar - 1);
+
+
+            //Left layer 
+            var leftRebars = new List<Rebar>();
+
+
+            if (NumberOfYRebar > 2)
+            {
+                for (int i = 0; i < NumberOfYRebar; i++)
+                {
+                    if (i == 0 || i == NumberOfYRebar - 1)
+                    {
+                        continue;
+                    }
+                    var o2 = beamModel.A.Add(
+                            beamModel.XVector * (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2))
+                        .Add(-beamModel.ZVector *
+                             (Cover + StrirrupDiameter.BarNominalDiameter + XDiameter.BarNominalDiameter / 2));
+
+                    o2 = new XYZ(o2.X - beamModel.Width / 2, beamModel.EndPoint.Y, o2.Z);
+                    o2 = o2.Add(beamModel.ZVector*-1 * i * spacing2Rebars);
+
+                    var beamLength = beamModel.beamCurve.Length;
+
+                    var line = Line.CreateBound(o2, o2.Add(XYZ.BasisY * (beamLength )));
+       
+
+                    if (i % 2 == 0)
+                    {
+                        var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, YDiameter, null, null, beamModel.Beam,
+                            beamModel.XVector,
+                            new List<Curve>() { line }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                        leftRebars.Add(rebar);
+                    }
+                    else
+                    {
+                        var rebar = Rebar.CreateFromCurves(doc, RebarStyle.Standard, YDiameter, null, null, beamModel.Beam,
+                            beamModel.XVector,
+                            new List<Curve>() { line }, RebarHookOrientation.Left, RebarHookOrientation.Left, true, true);
+                        leftRebars.Add(rebar);
+                    }
+                }
+            }
+            ElementTransformUtils.CopyElements(doc, leftRebars.Select(x => x.Id).ToList(), beamModel.XVector * (beamModel.Width - 2 * Cover - 2 * StrirrupDiameter.BarNominalDiameter - XDiameter.BarNominalDiameter));
         }
         void LoadCad()
         {

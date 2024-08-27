@@ -256,6 +256,7 @@ namespace RevitAddIn1.ThucChien.ColumnRebar.ViewModel
                     o2 = o2.Add(columnModel.YVector*-1 * i * spacing2Rebars);
 
                     var columnHeight = columnModel.TopElevation - columnModel.BotElevation;
+
                     var line20 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 20 * XDiameter.BarNominalDiameter)));
                     var line30 = Line.CreateBound(o2, o2.Add(XYZ.BasisZ * (columnHeight + 30 * XDiameter.BarNominalDiameter)));
                     if (i % 2 == 0)

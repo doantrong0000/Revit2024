@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Threading.Tasks;
+using Autodesk.Revit.DB.Structure;
+using Autodesk.Revit.UI.Selection;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.DB;
+using RevitAddIn1.Utils;
+using System.Collections.ObjectModel;
 
 namespace RevitAddIn1.ThucChien.BeamRebar.Model
 {
@@ -15,53 +18,80 @@ namespace RevitAddIn1.ThucChien.BeamRebar.Model
         public XYZ D { get; set; }
         public XYZ StartPoint { get; set; }
         public XYZ EndPoint { get; set; }
+        public List<PlanarFace> FaceLeftRight { get; set; } = new List<PlanarFace>();
+        public XYZ DirectionBeam { get; set; }
 
+    
         public XYZ XVector { get; set; }
         public XYZ YVector { get; set; }
         public XYZ ZVector { get; set; }
-
+        public List<PlanarFace> PlanarFaces = new List<PlanarFace>();
+        public List<Line> Lines = new List<Line>();
         public Transform Transform { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
         public FamilyInstance Beam { get; set; }
+        public Curve beamCurve { get; set; }
 
         public BeamRebarModel(FamilyInstance beam)
         {
-            // Khởi tạo như trước đây
+
+            Transform = beam.GetTransform();
+            
+
             Beam = beam;
             var type = beam.Symbol;
             Width = type.LookupParameter("b").AsDouble();
             Height = type.LookupParameter("h").AsDouble();
-
-            Transform = beam.GetTransform();
+       
 
             A = Transform.OfPoint(new XYZ(-Width / 2, 0, Height / 2));
             B = Transform.OfPoint(new XYZ(Width / 2, 0, Height / 2));
             C = Transform.OfPoint(new XYZ(Width / 2, 0, -Height / 2));
             D = Transform.OfPoint(new XYZ(-Width / 2, 0, -Height / 2));
 
-            XVector = Transform.OfVector(XYZ.BasisX);
-            YVector = Transform.OfVector(XYZ.BasisY);
-            ZVector = Transform.OfVector(XYZ.BasisZ);
+            XVector = XYZ.BasisX;
+            YVector = XYZ.BasisY;
+            ZVector = XYZ.BasisZ;
+
+            var ab = Line.CreateBound(A, B);
+            var bc = Line.CreateBound(B, C);
+            var cd = Line.CreateBound(C, D);
+            var dc = Line.CreateBound(D, A);
+            var cl = new CurveLoop();
+
+            cl.Append(ab);
+            cl.Append(bc);
+            cl.Append(cd);
+            cl.Append(dc);  
 
             var bb = beam.get_BoundingBox(null);
 
-            StartPoint = bb.Min; // Điểm đầu của dầm
-            EndPoint = bb.Max;   // Điểm cuối của dầm
+
+
+
+  
+                LocationCurve locationCurve = beam.Location as LocationCurve;
+                if (locationCurve != null)
+                {
+                    beamCurve = locationCurve.Curve;
+                // Thực hiện các thao tác với Curve ở đây
+           
+                 }
+            
+            // Điểm đầu và điểm cuối của dầm
+            XYZ startPoint = beamCurve.GetEndPoint(0);
+            XYZ endPoint = beamCurve.GetEndPoint(1);
+
+            // Gán giá trị cho StartPoint và EndPoint
+            StartPoint = startPoint;
+                EndPoint = endPoint;
+  
+            
+       
         }
 
         // Phương thức tính toán vị trí tại cao độ z
-        public XYZ GetPositionAtElevation(double z)
-        {
-            double totalHeight = EndElevation - StartElevation;
-            double ratio = (z - StartElevation) / totalHeight;
-
-            XYZ startPoint = Transform.Origin;
-            XYZ endPoint = Transform.OfPoint(new XYZ(0, 0, totalHeight));
-
-            XYZ positionAtZ = startPoint + ratio * (endPoint - startPoint);
-
-            return positionAtZ;
-        }
+       
     }
 }
