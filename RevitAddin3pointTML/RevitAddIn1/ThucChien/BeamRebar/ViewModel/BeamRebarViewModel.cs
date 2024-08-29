@@ -116,7 +116,7 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
         private RebarBarType _strirrupDiameter;
 
         public double Cover { get; set; } = 30.MmToFeet();
-        private BeamRebarModel beamModel { get; set; }
+        private BeamRebarModelY beamModel { get; set; }
 
 
         public BeamRebarViewModel(Document doc, UIDocument uiDoc)
@@ -147,7 +147,7 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
             {
                 var beam = uiDoc.Selection.PickObject(ObjectType.Element, new BeamSelectionFilter(), "'Select beam").ToElement() as FamilyInstance;
 
-                beamModel = new BeamRebarModel(beam);
+                beamModel = new BeamRebarModelY(beam);
         
             }
             catch (Exception e)
@@ -174,6 +174,7 @@ namespace RevitAddIn1.ThucChien.BeamRebar.ViewModel
 
         void CreateStirrup()
         {
+           
             var shaper = new FilteredElementCollector(doc).OfClass(typeof(RebarShape)).Cast<RebarShape>()
                 .First(x => x.Name == "M_T6");
             var o1 = beamModel.D.Add(beamModel.XVector * Cover ).Add(beamModel.ZVector * Cover);

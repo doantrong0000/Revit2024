@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 
 namespace RevitAddIn1.ThucChien.BeamRebar.Model
 {
-    public class BeamRebarModel
+    public class BeamRebarModelY
     {
         // Các thuộc tính như trước đây
         public XYZ A { get; set; }
@@ -33,7 +33,7 @@ namespace RevitAddIn1.ThucChien.BeamRebar.Model
         public FamilyInstance Beam { get; set; }
         public Curve beamCurve { get; set; }
 
-        public BeamRebarModel(FamilyInstance beam)
+        public BeamRebarModelY(FamilyInstance beam)
         {
 
             Transform = beam.GetTransform();
@@ -51,7 +51,9 @@ namespace RevitAddIn1.ThucChien.BeamRebar.Model
             D = Transform.OfPoint(new XYZ(-Width / 2, 0, -Height / 2));
 
             XVector = XYZ.BasisX;
+
             YVector = XYZ.BasisY;
+
             ZVector = XYZ.BasisZ;
 
             var ab = Line.CreateBound(A, B);
