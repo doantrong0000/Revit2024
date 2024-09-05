@@ -1,13 +1,13 @@
-﻿<Window x:Class="RevitAddIn1.ThucChien.BeamRebar.View.BeamRebarView"
+﻿<Window x:Class="RevitAddIn1.ThucChien.BeamRebar2.View.BeamRebar2View"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RevitAddIn1.ThucChien.BeamRebar.View"
-        xmlns:viewModel="clr-namespace:RevitAddIn1.ThucChien.BeamRebar.ViewModel"
-        d:DataContext="{d:DesignInstance viewModel:BeamRebarViewModel}"
+        xmlns:local="clr-namespace:RevitAddIn1.ThucChien.BeamRebar2.View"
+        xmlns:viewModel="clr-namespace:RevitAddIn1.ThucChien.BeamRebar2.ViewModel"
+        d:DataContext="{d:DesignInstance viewModel:BeamRebar2ViewModel}"
         mc:Ignorable="d"
-        Title="BeamRebarView" Height="350" Width="400">
+        Title="BeamRebarView" Height="300" Width="600">
     <Window.Resources>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="2"></Setter>
@@ -21,29 +21,36 @@
         <GroupBox Header="Main Rebar" DockPanel.Dock="Top">
             <Grid  DockPanel.Dock ="Top">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="120"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
+            
                 </Grid.RowDefinitions>
 
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" >Number of X rebar</TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding NumberOfXRebar}"></TextBox>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch" >Rebar Main Number</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SoLuongThepChinh}"></TextBox>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" >X Diameter</TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding XDiameter}" DisplayMemberPath="Name"></ComboBox>
+                <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Diameter</TextBlock>
+                <ComboBox Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding DuongKinhThepChinh}" DisplayMemberPath="Name"></ComboBox>
 
-                <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Number of Y rebar</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Top Reinforced Rebar Number</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1"
+                         Text="{Binding SoLuongThepGiaCuongLopTren}"></TextBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"  >Diameter</TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding DuongKinhThepGiaCuongLopTren}" DisplayMemberPath="Name"></ComboBox>
+
+                <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" >Bot Reinforced Rebar Number</TextBlock>
                 <TextBox Grid.Row="2" Grid.Column="1"
-                         Text="{Binding NumberOfYRebar}"></TextBox>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  >Y Diameter</TextBlock>
-                <ComboBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding YDiameter}" DisplayMemberPath="Name"></ComboBox>
+                         Text="{Binding SoLuongThepGiaCuongLopDuoi}"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"  >Diameter</TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" ItemsSource="{Binding Diameters}" SelectedItem="{Binding DuongKinhThepGiaCuongLopDuoi}" DisplayMemberPath="Name"></ComboBox>
 
 
 

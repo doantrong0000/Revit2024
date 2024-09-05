@@ -5,17 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nice3point.Revit.Toolkit.External;
-using RevitAddIn1.ThucChien.BeamRebar.ViewModel;
-using RevitAddIn1.ThucChien.ColumnRebar.View;
-using RevitAddIn1.ThucChien.ColumnRebar.ViewModel;
+using RevitAddIn1.LuyenTap.BeamRebar.ViewModel;
 using RevitAddIn1.Utils;
-using RevitAddIn1.ThucChien.BeamRebar.View;
+using RevitAddIn1.LuyenTap.BeamRebar.View;
 
-namespace RevitAddIn1.ThucChien.BeamRebar
+namespace RevitAddIn1.LuyenTap.BeamRebar
 {
     [UsedImplicitly]
     [Transaction(TransactionMode.Manual)]
-    public class BeamRebarCmd :ExternalCommand
+    public class BeamRebarCmd : ExternalCommand
     {
         public override void Execute()
         {

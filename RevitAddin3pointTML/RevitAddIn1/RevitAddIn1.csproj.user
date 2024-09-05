@@ -14,7 +14,7 @@
     <Compile Update="Parameter\RenameSheet\View\RenameSheetView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ThucChien\BeamRebar\View\BeamRebarView.xaml.cs">
+    <Compile Update="LuyenTap\BeamRebar\View\BeamRebarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ThucChien\ColumnRebar\View\ColumnRebarView.xaml.cs">
@@ -37,7 +37,10 @@
     <Page Update="Parameter\RenameSheet\View\RenameSheetView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ThucChien\BeamRebar\View\BeamRebarView.xaml">
+    <Page Update="LuyenTap\BeamRebar\View\BeamRebarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ThucChien\BeamRebar2\View\BeamRebar2View.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ThucChien\ColumnRebar\View\ColumnRebarView.xaml">

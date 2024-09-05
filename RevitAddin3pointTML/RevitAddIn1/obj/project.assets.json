@@ -240,7 +240,7 @@
           }
         }
       },
-      "Nice3point.Revit.Toolkit/2024.1.1": {
+      "Nice3point.Revit.Toolkit/2024.1.2": {
         "type": "package",
         "dependencies": {
           "JetBrains.Annotations": "2023.3.0"
@@ -815,10 +815,10 @@
         "nice3point.revit.extensions.nuspec"
       ]
     },
-    "Nice3point.Revit.Toolkit/2024.1.1": {
-      "sha512": "NnCX+pzuE4QNVMud8VsVtwBYtSCQeqVO9Ghagi90uZjYsA1xi9kP3EEmRoIKt2oce7LQtbdoOr+LEOSv1xeMfA==",
+    "Nice3point.Revit.Toolkit/2024.1.2": {
+      "sha512": "o/PZqK5ZxcMk3dp4HxScr7wTqwjUgpolQROJ1XdGDWvdApwocB4KooiNgn8YON46BzwJBi0XchPfP8AQWejRZw==",
       "type": "package",
-      "path": "nice3point.revit.toolkit/2024.1.1",
+      "path": "nice3point.revit.toolkit/2024.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -827,7 +827,7 @@
         "images/PackageIcon.png",
         "lib/net48/Nice3point.Revit.Toolkit.dll",
         "lib/net48/Nice3point.Revit.Toolkit.xml",
-        "nice3point.revit.toolkit.2024.1.1.nupkg.sha512",
+        "nice3point.revit.toolkit.2024.1.2.nupkg.sha512",
         "nice3point.revit.toolkit.nuspec"
       ]
     },

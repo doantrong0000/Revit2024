@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace RevitAddIn1.ThucChien.BeamRebar.View
+namespace RevitAddIn1.ThucChien.BeamRebar2.View
 {
     /// <summary>
     /// Interaction logic for BeamRebarView.xaml
     /// </summary>
-    public partial class BeamRebarView : Window
+    public partial class BeamRebar2View : Window
     {
-        public BeamRebarView()
+        public BeamRebar2View()
         {
             InitializeComponent();
         }
